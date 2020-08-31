@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+  <%= link_to "ROOM 8", root_path, class: "navbar-brand", id: "logo" %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "Tasks", articles_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Create Task", new_article_path, class: "nav-link" %>
+
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          My Account
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">My Tasks</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">House Status</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Recurring Payments</a>
+        </div>
+      </li>
+
+    </ul>
+
+  </div>
+</nav>

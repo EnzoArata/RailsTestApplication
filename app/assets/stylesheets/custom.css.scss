@@ -1,0 +1,56 @@
+@import 'bootstrap/dist/css/bootstrap';
+
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+#home-container{
+  margin-top: 25px;
+  //font-weight: bolder;
+  font-weight: bold;
+
+}
+
+.jumbotron {
+  background-image: asset-url("house3.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 625px;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.enzosbg {
+  background-color: lightgreen;
+}
+
+#page-content {
+  flex: 1 0 auto;
+  background-color: lightblue;
+}
+
+#sticky-footer {
+  flex-shrink: none;
+}
+
+#task-container-1 {
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: lightgrey;
+  font-weight: bold;
+}
+
+#article-page-bg {
+  background-color: lightgreen;
+}
