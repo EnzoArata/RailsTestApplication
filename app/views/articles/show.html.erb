@@ -1,9 +1,30 @@
-<h1>Showing Article Details</h1>
 
-<p><strong>Title:</strong> <%= @article.title %> </p>
-<p><strong>Description:</strong> <%= @article.description %> </p>
 
-<p><%= link_to "Edit", edit_article_path(@article) %>
-    || <%= link_to "Delete", article_path(@article), method: :DELETE, data: {confirm:"Are you sure?"}%>
-    || <%= link_to "Articles Listing", articles_path %>
-</p>
+<div class="container" id="page-content">
+  <div class="row">
+    <div class="col-lg-6 rounded" id = "show-page">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"> <%= @article.title %></h5>
+          <h6 class="card-subtitle mb-2 text-muted"><small><i> Created <%= time_ago_in_words( @article.created_at) %> ago by <%= @article.user.username %> </i></small></h6>
+          <p class="card-text"><%= @article.description %></p>
+          <%= link_to "Edit", edit_article_path(@article), class: "card-link" %>
+          <%= link_to "Articles Listing", articles_path, class: "card-link"%>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+<footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+    <div class="container text-center">
+      <small>Copyright &copy; Enzo </small>
+      <br>
+      <%= link_to "Articles Listing", articles_path %>
+     |
+      <%= link_to "About page", about_path %>
+    </div>
+</footer>
