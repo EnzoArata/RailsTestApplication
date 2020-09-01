@@ -1,26 +1,28 @@
 
 <div class="container rounded" id="task-container-1">
+
+  <%= render "shared/errors", obj: @user %>
   <%= form_with(model: @user, local: true ) do |f| %>
 
   <h1 class = "text-center"> New Account </h1>
     <div class="form-group row">
       <%= f.label :"User Name", class: "col-2 col-form-label" %><br>
       <div class="col-10">
-        <%= f.text_area :username, class: "form-control", placeholder: "BigDaddyEnzo" %>
+        <%= f.text_field :username, class: "form-control", placeholder: "BigDaddyEnzo" %>
       </div>
     </div>
 
     <div class="form-group row">
       <%= f.label :Email, class: "col-2 col-form-label" %><br>
       <div class="col-10">
-        <%= f.text_area :email, class: "form-control", placeholder: "example@email.com" %>
+        <%= f.email_field :email, class: "form-control", placeholder: "example@email.com" %>
       </div>
     </div>
 
     <div class="form-group row">
       <%= f.label :Password, class: "col-2 col-form-label" %><br>
       <div class="col-10">
-        <%= f.text_area :password, class: "form-control", placeholder: "************" %>
+        <%= f.text_area :password_digest, class: "form-control", placeholder: "************" %>
       </div>
     </div>
 
@@ -29,8 +31,8 @@
 
 
     <p class = "text-center">
-      <%= f.submit class: "text-white btn-secondary" %>
+      <%= f.submit "Sign Up", class: "text-black btn btn-secondary btn-large btn-outline-light" %>
     </p>
   <% end %>
-
+<br>
 </div>

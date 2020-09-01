@@ -1,0 +1,11 @@
+<div class="container rounded" id="error-message">
+  <% if obj.errors.any? %>
+    <h4><strong> The following errors prevented the <%= obj.class.name.downcase %> from being saved</strong></h4>
+    <ul>
+      <% obj.errors.full_messages.each do |msg| %>
+        <li> <%= msg %> </li>
+      <% end %>
+    </ul>
+  <% end %>
+
+</div>
