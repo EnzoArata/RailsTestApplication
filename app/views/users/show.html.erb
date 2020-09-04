@@ -4,6 +4,12 @@
 
   <%= gravatar_for @user, size: 200 %>
 
+  <div class="mt-4">
+
+    <%= link_to "[ Edit Your Profile ]", edit_user_path(@user), class: "btn btn-outline-dark" %>
+
+  </div>
+
   <h3><strong> Articles</strong></h3>
   <div class="row">
     <div class="col-lg-5 shadow-lg p-3 mb-5 rounded" id="task-container-1">
