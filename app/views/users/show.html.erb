@@ -5,12 +5,12 @@
   <%= gravatar_for @user, size: 200 %>
 
   <div class="mt-4">
-
-    <%= link_to "[ Edit Your Profile ]", edit_user_path(@user), class: "btn btn-outline-dark" %>
-
+    <% if logged_in? && @user == current_user %>
+      <%= link_to "[ Edit Your Profile ]", edit_user_path(@user), class: "btn btn-outline-dark" %>
+    <% end %>
   </div>
 
-  <h3><strong> Articles</strong></h3>
+
   <div class="row">
     <div class="col-lg-5 shadow-lg p-3 mb-5 rounded" id="task-container-1">
       <h1>Unfinished Tasks</h1>
@@ -31,11 +31,13 @@
           <ul class="list-group">
             <% @articles.each do |article| %>
 
-                <li class="list-group-item list-group-item-light">
+                <li class="list-group-item list-group-item-light text-left">
                     <%= link_to article.title, article_path(article), class: "text-info" %>
 
                     <div class="text-right">
-                      <%= link_to "Complete", article_path(article) %> -
+                      <% if logged_in? && article.user == current_user %>
+                        <%= link_to "Complete", article_path(article) %> -
+                      <% end %>
                       <%= article.description %> -
                       <small> <i> Created <%= time_ago_in_words( article.created_at) %> ago by <%= article.user.username %> </i> </small>
 
