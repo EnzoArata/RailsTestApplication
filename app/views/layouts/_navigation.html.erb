@@ -7,13 +7,15 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <%= link_to "Tasks", articles_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Create Task", new_article_path, class: "nav-link" %>
+      <% if logged_in? %>
+        <li class="nav-item active">
+          <%= link_to "Tasks", articles_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Create Task", new_article_path, class: "nav-link" %>
 
-      </li>
+        </li>
+      <% end %>
 
 
       <% if logged_in? %>
@@ -29,18 +31,25 @@
         </li>
       <% end %>
 
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          My Account
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">My Tasks</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">House Status</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Recurring Payments</a>
-        </div>
-      </li>
+      <% if logged_in? %>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= current_user.username %>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <%= link_to "Your Profile", user_path(current_user), class: "dropdown-item" %>
+            <div class="dropdown-divider"></div>
+            <%= link_to "Edit Account", edit_user_path(current_user), class: "dropdown-item" %>
+            <div class="dropdown-divider"></div>
+            <%= link_to "House Status", articles_path, class: "dropdown-item" %>
+          </div>
+        </li>
+
+      <% else %>
+
+      <% end %>
+
 
     </ul>
 
