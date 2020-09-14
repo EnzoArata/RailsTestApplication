@@ -25,13 +25,17 @@
 
                 <li class="list-group-item list-group-item-light">
                     <%= link_to user.username, user_path(user) %>
-                  
+
 
                     <div class="text-right">
                       <%= gravatar_for user, size: 200 %>
 
 
                     </div>
+                    <% if current_user.admin? %>
+                      <%= link_to "Delete Account", user_path(user), class: "btn btn-dark btn-lg btn-outline-dark text-danger", method: :delete, data: {confirm: "Are you sure?"} %>
+
+                    <% end %>
 
                 </li>
 
