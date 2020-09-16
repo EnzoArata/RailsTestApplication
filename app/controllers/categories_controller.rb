@@ -21,7 +21,7 @@ class CategoriesController < ApplicationController
   end
 
   def index
-
+      @categories = Category.all
   end
 
   private
