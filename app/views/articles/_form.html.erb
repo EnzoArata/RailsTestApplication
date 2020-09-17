@@ -69,15 +69,25 @@
       </div>
 
     <div class="form-group row text-center">
-      <%= f.label :Start, class: "col-2 col-form-label" %><br>
+      <%= f.label :Descrition, class: "col-2 col-form-label" %><br>
 
-        <%= f.text_area :description, placeholder: "First of the month" %>
+        <%= f.text_area :description, class: "shadow-rounded",placeholder: "First of the month" %>
 
-      <%= f.label :End, class: "col-2 col-form-label" %><br>
 
-        <%= f.text_area :description, placeholder: "Last of the month" %>
 
     </div>
+
+    <div class="form-group row text-center">
+      <%= f.label :category, class: "col-2 col-form-label" %><br>
+        <%= f.collection_select(:category_ids, Category.all, :id, :name,
+                                {prompt: "Make your selecetion from the list below"},
+                                {multiple: true, size: 3}) %>
+
+
+
+
+    </div>
+
 
     <p class = "text-center">
       <%= f.submit class: "text-white btn-secondary" %>
